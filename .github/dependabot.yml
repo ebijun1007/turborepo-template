@@ -1,0 +1,43 @@
+version: 2
+updates:
+  # ルートpackage.jsonの更新
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+
+  # admin appの更新
+  - package-ecosystem: "npm"
+    directory: "/apps/admin"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+
+  # lp appの更新
+  - package-ecosystem: "npm"
+    directory: "/apps/lp"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+
+  # web appの更新
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+
+  # api packageの更新
+  - package-ecosystem: "npm"
+    directory: "/packages/api"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+
+  # types packageの更新
+  - package-ecosystem: "npm"
+    directory: "/packages/types"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
