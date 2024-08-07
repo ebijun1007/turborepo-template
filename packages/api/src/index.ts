@@ -1,12 +1,16 @@
-import { Hono } from 'hono'
-import { adminApp } from './routes/admin'
-import { webApp } from './routes/web'
+import { Hono } from "hono";
+import { adminApp } from "./routes/admin";
+import { webApp } from "./routes/web";
 
-const app = new Hono()
-  .route('/admins', adminApp)
-  .route('/web', webApp)
+type Bindings = {
+	MY_VARIABLE: string;
+};
 
-type AppType = typeof app
+const app = new Hono<{ Bindings: Bindings }>()
+	.route("/admins", adminApp)
+	.route("/web", webApp);
 
-export default app
-export type { AppType }
+type AppType = typeof app;
+
+export default app;
+export type { AppType };
